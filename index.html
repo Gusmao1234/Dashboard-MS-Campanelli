@@ -1,1 +1,87 @@
-file:///C:/Users/Agropastoril/Desktop/Dashboard%20MS%20%E2%80%94%20Campanelli%202026.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard MS - Campanelli</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial;
+            background: linear-gradient(135deg,#4b0d27,#8b1e3f);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .box{
+            background:white;
+            padding:40px;
+            border-radius:12px;
+            width:320px;
+            text-align:center;
+        }
+
+        h1{
+            color:#8b1e3f;
+            margin-bottom:20px;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+            border:1px solid #ccc;
+            border-radius:8px;
+        }
+
+        button{
+            width:100%;
+            padding:10px;
+            background:#8b1e3f;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#5a0f2a;
+        }
+
+        .erro{
+            color:red;
+            margin-top:10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>Login</h1>
+
+    <input id="user" placeholder="Usuário">
+    <input id="pass" type="password" placeholder="Senha">
+
+    <button onclick="login()">Entrar</button>
+
+    <div class="erro" id="erro"></div>
+</div>
+
+<script>
+function login(){
+    let u = document.getElementById("user").value;
+    let p = document.getElementById("pass").value;
+
+    if(u === "admin" && p === "1234"){
+        window.location.href = "dashboard.html";
+    } else {
+        document.getElementById("erro").innerText = "Login inválido";
+    }
+}
+</script>
+
+</body>
+</html>
